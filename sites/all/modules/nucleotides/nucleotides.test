@@ -1,0 +1,127 @@
+<?php
+/**
+ * @file
+ * Functional tests for the simple Greeting module.
+ */
+class NucleotidesTests extends DrupalWebTestCase {
+
+	/**
+     * Controls info displayed about our test in the Drupal Testing UI
+     */
+	public static function getInfo() {
+		return array(
+            // Name your tests.
+            'name' => 'Nucleodtides Tests',
+            // Describe the point of these tests.
+            'description' => 'Tests the Nucleodtides module.',
+            // Assign these tests to a group, just like the "package" in the module's info page puts your modules into a group.
+            'group' => 'Epicodus Examples Tests',
+        );
+
+	}//End of getInfo function
+
+	public function setUp() {
+        //enable modules we need by putting their machine readable names into an array.
+        parent::setUp(array('nucleotides'));
+
+    }//End of setUp function
+
+    /**
+     * Perform the tasks we are testing, and assert the result. "Act" and then "Assert".
+     */
+    public function testNucleotidesNavigation() {
+        // Navigate to the URL created by the Nucleotides module.
+        $this->drupalGet('nucleotides');
+        // Assert that the text we want to see is actually there on the page.
+        $this->assertText('returned_string', 'This is your returned nucleotide sequence');
+    }
+
+}//End of class declaration for functional tests
+
+
+//UNIT TESTS BELOW
+
+class NucleotidesTests extends DrupalUnitTestCase {
+
+	public static function getInfo() 
+    {
+        return array(
+        'name' => 'Nucleotides Tests',
+        'description' => 'Test that my nucleotide letter converter is working properly',
+        'group' => 'Epicodus Examples Tests',
+        );
+    }//Ends getInfo function
+
+	function testConvertNucleotideLetter() 
+    {
+
+//TEST 1: Single letter, one of the reserved letters
+
+        //English description
+        //displays desired result during test
+        $description = 'An input string of "A" should return "T" ';
+
+        //Arrange
+        //create input
+        $input = 'A';
+
+        //Act
+        //run the function we're testing with input and store output in $result.
+        $result = element_validate_letter($input);
+
+        //Assert
+        //This time we're using assertEqual
+        //If the first argument == second argument, test passes.
+        //Again pass in $description for display. 
+        $expected_output = 'A';
+        $this->assertEqual($result, $expected_output, $description);
+
+//TEST 2: Single letter, not one of the reserved letters
+
+        //English description
+        //displays desired result during test
+        $description = 'An input string of "B" should return "Please enter only the following letters in your string: "A", "C", "G", or "T".';
+
+        //Arrange
+        //create input
+        $input = 'B';
+
+        //Act
+        //run the function we're testing with input and store output in $result.
+        $result = element_validate_letter($input);
+
+        //Assert
+        //This time we're using assertEqual
+        //If the first argument == second argument, test passes.
+        //Again pass in $description for display. 
+        $expected_output = 'A';
+        $this->assertEqual($result, $expected_output, $description);
+
+//TEST 3: Two letters, both coming from the reserved letters
+
+        //English description
+        //displays desired result during test
+        $description = 'An input string of "AG" should return "TC".';
+
+        //Arrange
+        //create input
+        $input = 'AG';
+
+        //Act
+        //run the function we're testing with input and store output in $result.
+        $result = element_validate_letter($input);
+
+        //Assert
+        //This time we're using assertEqual
+        //If the first argument == second argument, test passes.
+        //Again pass in $description for display. 
+        $expected_output = 'A';
+        $this->assertEqual($result, $expected_output, $description);
+
+    }//Ends testConvertNucleotideLetter function
+
+}//Ends unit test class declaration
+
+
+
+

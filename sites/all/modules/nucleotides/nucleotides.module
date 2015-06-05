@@ -43,10 +43,11 @@ function element_validate_letter($element) {
 		foreach ($exploded_letters as $letter) {
 			if ($element['#value'] != "A" || "C" || "G" || ) {
 				form_error($element, t('Please enter only the following letters in your string: "A", "C", "G", or "T"'));
-			} else {
-				//How to return the corresponding letter for each nucleotide letter?
+			} elseif ($element['#value'] = "A") {
+
+			//How to return the corresponding letter for each nucleotide letter?
 			$returned_string = implode("", $element['value']);
-				return 
+				return $returned_string;
 			}
 	}
 
