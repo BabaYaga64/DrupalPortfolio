@@ -1,0 +1,76 @@
+<?php 
+
+function nucleotides_menu() {
+	$items['nucleotides'] = array(
+		'title' => 'Nucleotides',
+		'page_callback' => 'drupal_get_form',
+		'page_arguments' => array('nucleotides_form'),
+		'access_callback' => TRUE,
+		'type' => MENU_NORMAL_ITEM,
+	);
+
+	$item['success'] = array(
+		'title' => 'Success',
+		'page_callback' =>'nucleotides_success',
+		'access_callback' => TRUE,
+		'type' => MENU_CALLBACK,
+	);
+	return $items;
+
+}//End menu functions
+
+function nucleotides_form() {
+	$form['first nucleotide string'] =array(
+		'#title' => 'First Nucleotide String'
+		'#type' => 'textfield',
+		'#description' => t('Please enter your first DNA nucleotide string, using only the following letters: "A", "C", "G", or "T".'),
+		'#element_validate' => array(
+			'#element_validate_letter'),
+		'#required' => TRUE;
+	);
+
+	$form['submit'] = array(
+		'#type' => 'submit',
+		'#value' => 'Nucleotides',
+	);
+	return $form;
+
+}//End form functions
+
+function element_validate_letter($element) {
+
+	$exploded_letters = explode("", $element['#value']);
+		foreach ($exploded_letters as $letter) {
+			if ($element['#value'] != "A" || "C" || "G" || ) {
+				form_error($element, t('Please enter only the following letters in your string: "A", "C", "G", or "T"'));
+			} else {
+				//How to return the corresponding letter for each nucleotide letter?
+			$returned_string = implode("", $element['value']);
+				return 
+			}
+	}
+
+
+	
+
+}// End validate function
+
+function nucleotides_form_submit($form, &$form_state) {
+
+	$form_state['redirect'] = 'success';
+
+}//End submit hook
+
+function nucleotides_success() {
+	$output = $_SESSION['nucleotides_output'];
+	return $output;
+}
+
+
+
+
+
+
+
+
+

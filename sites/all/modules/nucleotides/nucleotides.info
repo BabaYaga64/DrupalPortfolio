@@ -1,0 +1,5 @@
+name = Nucleotides
+description = Displays the corresponding nucleotide letter when a user inputs the first nucleotide letter.
+package = Epicodus Examples
+core = 7.x
+files[] = necleotides.module
