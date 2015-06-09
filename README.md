@@ -13,7 +13,8 @@ This is a portfolio website that shows my knowledge of creating and testing cust
 
 1. Download a copy of the repository from GitHub.
 2. Launch a MAMP/LAMP/WAMP server and point the server to the root directory (main project folder)
-3. Open browser and navigate to http://localhost:8888/
+3. Open PHPMyAdmin and import database. (Database name: portfolio). Add a database user (user name: bojana password: bojana)
+4. Open browser and navigate to http://localhost:8888/
 
 ###Attn: Diane
 
