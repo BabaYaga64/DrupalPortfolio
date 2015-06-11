@@ -1,0 +1,13 @@
+Awesome job! Making great progress. I think you should make this project your top priority. After this is solid, then if you have time try to finish off any earlier assessments you have left. Here is my feedback:
+
+lovely readme! just add a step to your setup instructions saying that they should import your database into phpmyadmin (remember to specify which file to import). They will also need to create your database user with password in phpmyadmin before navigating to localhost:8888.
+beautiful theme and front page content.
+
+if I click on your ajax links on your front page I get an error. Hint: Where is the corresponding div that should be displaying the content?
+
+your dna module was not enabled. be sure to do this and then re export your db.
+when I enable your dna module, it says there is a syntax error. So try to fix that.
+
+contact page is only visible if you are logged in. You want people who see your site and want to hire you to be able to get in touch with you, so check your permissions. Anonymous users should be able to contact you.
+
+when you're done with all of that, just add some of your other projects. Links to other drupal sites, a couple custom modules and maybe create a features module. Then you're done!

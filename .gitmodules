@@ -1,0 +1,6 @@
+[submodule "AjaxFeatureBundle"]
+	path = AjaxFeatureBundle
+	url = https://github.com/BabaYaga64/AjaxFeatureBundle.git
+[submodule "New_User_Submodule"]
+	path = New_User_Submodule
+	url = https://github.com/BabaYaga64/New_User_Submodule.git
