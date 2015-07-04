@@ -7,7 +7,7 @@
 
 ###Description
 
-This is a portfolio website that shows my knowledge of creating and testing custom modules in Drupal. I have created a custom module called nucleotide.module that takes an input of any of the four DNA nucleotide letters, "A", "G", "T", or "C", and returns the corresponding letter for that first input. I have also created unit tests to test the logic of my program, and functional tests to test that the user interface works. This portfolio also contains an block of content that shows different nodes depending on which one is clicked, using Ajax functions to manipulate the view for each node. 
+This is a portfolio website that I have created using Drupal. This portfolio includes custom modules that I have created, and functional tests to test that the user interface works. This portfolio contains an block of content that shows different nodes depending on which one is clicked, using Ajax functions to manipulate the view for each node. 
 
 ###Setup Instructions
 
